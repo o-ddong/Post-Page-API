@@ -10,3 +10,6 @@ class Post(BaseModel):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=20, verbose_name='제목')
     content = models.CharField(max_length=200, verbose_name='본문')
+
+    def __str__(self):
+        return str(self.id)

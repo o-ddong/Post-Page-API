@@ -9,5 +9,5 @@ class User(BaseModel):
     """
     유저 모델
     """
-    id = models.IntegerField(primary_key=True)
-    password = models.ForeignKey(Post, on_delete=models.CASCADE, verbose_name='비밀번호')
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    password = models.CharField(max_length=30, verbose_name='비밀번호')
