@@ -1,11 +1,11 @@
-from django.db.migrations import serializer
-from application.board.models import Post
+from applications.board.models import Post
 
+from rest_framework import serializers
 
-class PostSerializer(serializer.ModelSerializer):
+class PostModelSerializer(serializers.ModelSerializer):
     """
     게시글 serializer
     """
     class Meta:
         model = Post
-        field = "__all__"
+        fields = ['id', 'title', 'content']
