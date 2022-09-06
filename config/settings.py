@@ -40,9 +40,9 @@ DJANGO_APPS = [
 ]
 
 PROJECT_APPS = [
-    'application.user',
-    'application.base',
-    'application.board',
+    'applications.user',
+    'applications.base',
+    'applications.board',
 ]
 
 THIRD_PARTY_APPS = [
