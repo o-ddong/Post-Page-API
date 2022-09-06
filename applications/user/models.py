@@ -1,8 +1,8 @@
 from django.db import models
 
 # Create your models here.
-from application.base.models import BaseModel
-from application.board.models import Post
+from applications.base.models import BaseModel
+from applications.board.models import Post
 
 
 class User(BaseModel):
