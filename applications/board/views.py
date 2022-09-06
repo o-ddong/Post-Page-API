@@ -47,5 +47,19 @@ class PostAPIView(mixins.ListModelMixin, mixins.CreateModelMixin, generics.Gener
             print(e)
             return Response("게시글이 정상적으로 생성되지 않았습니다.")
 
+class UserDetailMixins(mixins.UpdateModelMixin, mixins.DestroyModelMixin, generics.GenericAPIView):
+    """
+    게시글 정보 수정 및 탈퇴
+    """
 
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+    def put(self, request, *args, **kwargs):
+        return self.update(request, *args, **kwargs)
+
+    def delete(self, request, *args, **kwargs):
+        # try:
+        #     queryset = User.objects.select_related('password')
+        return self.destroy(request, *args, **kwargs)
 
