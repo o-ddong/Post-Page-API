@@ -1,3 +1,5 @@
+from django.contrib.auth.hashers import check_password
+
 from applications.board.models import Post
 
 from rest_framework import serializers
@@ -8,4 +10,5 @@ class PostSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = Post
-        fields = ['id', 'title', 'content']
+        fields = '__all__'
+

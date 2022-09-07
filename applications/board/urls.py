@@ -19,4 +19,5 @@ from applications.board import views
 
 urlpatterns = [
     path('post/', views.PostAPIView.as_view()),
+    path('post/<int:pk>/', views.PostDetailDeleteMixins.as_view()),
 ]
